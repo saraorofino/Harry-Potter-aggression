@@ -131,7 +131,11 @@ $(document).ready(function () {
 <pre class="r"><code>library(tidyverse)
 hp_data &lt;- read_csv(&quot;harry_potter_aggression_full.csv&quot;)</code></pre>
 <p>Hi Sara :)</p>
-<p>How to save this version to your GitHub Repo: <em>first have to knit the markdown</em> 1. In Git tab, select stage tab 2. Selcect commit and write your commit message - presh commit 3. Presh push (upper right hand corner)</p>
+<p>How to save this version to your GitHub Repo:<br />
+<em>first have to knit the markdown</em><br />
+1. In Git tab, select stage tab<br />
+2. Selcect commit and write your commit message - presh commit<br />
+3. Presh push (upper right hand corner)</p>
 <p>Let’s make a graph of Harry Potter vs. Draco Malfoy acts of aggression</p>
 <pre class="r"><code>hp_graph &lt;- hp_data %&gt;% 
   filter(Name == &quot;Harry&quot; | Name == &quot;Draco Malfoy&quot;) %&gt;% # filter only two characters
