@@ -15,3 +15,24 @@ hp_data <- read_csv("harry_potter_aggression_full.csv")
 ```
 
 Hi Sara :) 
+
+How to save this version to your GitHub Repo:
+*first have to knit the markdown*
+1. In Git tab, select stage tab
+2. Selcect commit and write your commit message - presh commit
+3. Presh push (upper right hand corner)
+
+Let's make a graph of Harry Potter vs. Draco Malfoy acts of aggression
+
+```{r}
+hp_graph <- hp_data %>% 
+  filter(Name == "Harry" | Name == "Draco Malfoy") %>% # filter only two characters
+  select (Name, book, agg.per.mention) %>%  # retain only these columns
+  ggplot(aes(x = book, y = agg.per.mention)) + # can pipe straight to ggplot because ggplot is new enough
+  geom_col(aes(fill = Name), position = "dodge") + # default is a stacked column graph, default = dodge changes this to side by side columns 
+  coord_flip() #flips x and y axis 
+  
+
+hp_graph  
+```
+
